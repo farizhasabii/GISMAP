@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">UI</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="nav_home">Home</string>
+    <string name="nav_ikan">Perikanan</string>
+    <string name="nav_pertanian">Pertanian</string>
+    <string name="nav_infrastruktur">Infrastruktur</string>
+    <string name="nav_about_us">About Us</string>
+    <string name="nav_demografi">Demografi Penduduk</string>
+
+
+    <!-- Toolbar titles when navigation menu item is selected -->
+    <string-array name="nav_item_activity_titles">
+        <item>Home</item>
+        <item>Perikanan</item>
+        <item>Pertanian</item>
+        <item>Infrastruktur</item>
+        <item>Demografi</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

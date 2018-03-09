@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/nav_home"
+        />
+    <item
+        android:id="@+id/nav_ikan"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/nav_ikan"/>
+    <item
+        android:title="@string/nav_pertanian"
+        android:icon="@mipmap/ic_launcher"
+        android:id="@+id/nav_pertanian"
+        />
+    <item
+        android:title="@string/nav_infrastruktur"
+        android:icon="@mipmap/ic_launcher"
+        android:id="@+id/nav_infrastruktur"
+        />
+    <item
+        android:title="@string/nav_demografi"
+        android:icon="@mipmap/ic_launcher"
+        android:id="@+id/nav_demografi"
+        />
+
+</group>
+    <item android:title="Other">
+    <menu>
+    <item
+        android:id="@+id/nav_about_us"
+        android:title="@string/nav_about_us" />
+    </menu>
+    </item>
+</menu>
