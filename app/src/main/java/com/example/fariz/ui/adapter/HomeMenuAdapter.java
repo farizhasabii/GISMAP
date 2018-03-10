@@ -1,8 +1,5 @@
 package com.example.fariz.ui.adapter;
 
-import com.example.fariz.ui.R;
-import com.example.fariz.ui.data.HomeMenu;
-
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,7 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.fariz.ui.R;
+import com.example.fariz.ui.data.HomeMenu;
 
 import java.util.ArrayList;
 
@@ -24,6 +23,16 @@ public class HomeMenuAdapter extends RecyclerView.Adapter<HomeMenuAdapter.HomeMe
     private ArrayList<HomeMenu> homeMenus;
 
     private Context context;
+
+    private HomeListener homeListener;
+
+    public HomeListener getHomeListener() {
+        return homeListener;
+    }
+
+    public void setHomeListener(HomeListener homeListener) {
+        this.homeListener = homeListener;
+    }
 
     public HomeMenuAdapter(ArrayList<HomeMenu> homeMenus, Context context) {
         this.homeMenus = homeMenus;
@@ -73,7 +82,16 @@ public class HomeMenuAdapter extends RecyclerView.Adapter<HomeMenuAdapter.HomeMe
 
         @Override
         public void onClick(View view) {
-            Toast.makeText(context, "klik", Toast.LENGTH_SHORT).show();
+            switch (view.getId()){
+                case R.id.rl_container_menu_home:
+                    if (getHomeListener() != null){
+                        getHomeListener().onClickMenu(homeMenus.get(getAdapterPosition()));
+                    }
+            }
         }
+    }
+
+    public interface HomeListener{
+        void onClickMenu(HomeMenu homeMenu);
     }
 }

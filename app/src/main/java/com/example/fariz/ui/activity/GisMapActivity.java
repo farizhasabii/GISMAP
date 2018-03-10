@@ -1,5 +1,7 @@
-package com.example.fariz.ui;
+package com.example.fariz.ui.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -10,13 +12,23 @@ import com.esri.arcgisruntime.mapping.ArcGISMap;
 import com.esri.arcgisruntime.mapping.view.MapView;
 import com.esri.arcgisruntime.portal.Portal;
 import com.esri.arcgisruntime.portal.PortalItem;
+import com.example.fariz.ui.R;
+import com.example.fariz.ui.data.HomeMenu;
 import com.example.fariz.ui.fragment.FilterDialogFragment;
 
 public class GisMapActivity extends AppCompatActivity   {
+    public static final String EXTRA_HOME_MENU = "home_menu";
     private MapView mmapView;
     private FloatingActionButton fabFilterDialog1;
     private String caseFilter = "";
     private String itemId = "";
+    private HomeMenu homeMenu;
+
+    public static void start(Context context, HomeMenu homeMenu){
+        Intent intent = new Intent(context, GisMapActivity.class);
+        intent.putExtra(EXTRA_HOME_MENU, homeMenu);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +42,8 @@ public class GisMapActivity extends AppCompatActivity   {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
         getSupportActionBar().setTitle("GIS MAP");
         getSupportActionBar().setSubtitle("Ayo Investasi di jogja");
+
+        homeMenu = getIntent().getParcelableExtra(EXTRA_HOME_MENU);
 
         fabFilterDialog1.setOnClickListener(new View.OnClickListener() {
             @Override
